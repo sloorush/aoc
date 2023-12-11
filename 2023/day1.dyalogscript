@@ -1,0 +1,10 @@
+#!/bin/dyalogscript
+d←⊃⎕NGET'./data/day1.txt' 1
+
+⍝ part 1
+stripAlphabets ← {⍵~⎕C⎕A}¨
+⎕ ← +/{⍎⍕((⊣/⍵), ⊢/⍵)}¨ stripAlphabets d
+
+⍝ part 2
+conv← ('oneight' 'eightwo' 'nineight' 'twone' 'sevenine' 'eighthree' 'zero' 'one' 'two' 'three' 'four' 'five' 'six' 'seven' 'eight' 'nine' ⎕r (⍕¨,¨18 82 98 21 79 83,⎕d)) d
+⎕←+/{⍎⍕((⊣/⍵), ⊢/⍵)}¨ stripAlphabets conv
